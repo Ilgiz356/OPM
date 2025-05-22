@@ -2,11 +2,7 @@
 Длина имени и фамилии не превышает 50 символов.
 Добавьте в таблицу трех пользователей: Дмитрия Иванова, Анатолия Белого и Дениса Давыдова.
 
-CREATE TABLE users (
-Id INT ,
-first_name VARCHAR (50),
-last_name Varchar (50)
-);
+CREATE TABLE users ( Id INT , first_name VARCHAR (50), last_name Varchar (50) );
 INSERT INTO users (id, first_name, last_name)
 VALUES (1, 'Дмитрий','Иванов'),
 (2, 'Анатолий','Белов'),
