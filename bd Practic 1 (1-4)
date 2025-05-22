@@ -10,6 +10,7 @@ SELECT * FROM orders
 WHERE STATUS = 'cancelled' OR
 STATUS = 'new'
 
+
 4) Выберите из таблицы orders все заказы содержащие более 3 товаров (products_count). Вывести нужно только номер (id) и сумму (sum) заказа.
 SELECT id, sum FROM orders
 WHERE products_count >= '3';
