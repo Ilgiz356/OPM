@@ -49,3 +49,29 @@ INSERT INTO users (id, first_name, last_name, patronymic, is_active, is_superuse
 (1, 'Дмитрий', 'Иванов', '', TRUE, FALSE),
 (2, 'Анатолий', 'Белый', 'Сергеевич', TRUE, TRUE),
 (3, 'Андрей', 'Крючков', '', FALSE, FALSE);
+
+
+
+Задание 3.
+Создайте таблицу products для хранения товаров в интернет магазине:
+
+id — идентификатор, целое положительное.
+category_id — категория, целое положительное. Может принимать NULL. По умолчанию NULL.
+name — название, строка до 100 символов. NULL запрещен.
+count — количество, целое положительное до 255. NULL запрещен, по умолчанию 0.
+price — цена типа DECIMAL с 10 знаками, 2 из которых выделены для копеек. NULL запрещен, по умолчанию 0.00.
+Добавьте 3 записи так, чтобы получалась таблица ниже:
+
+
+DROP TABLE if EXISTS products;
+CREATE TABLE products (
+id INT UNSIGNED PRIMARY KEY,
+category_id INT UNSIGNED NULL DEFAULT NULL,
+name VARCHAR(100) NOT NULL,
+count TINYINT UNSIGNED NOT NULL DEFAULT 0,
+price DECIMAL(10, 2) NOT NULL DEFAULT 0.00);
+
+INSERT INTO products (id, category_id, name, count, price) VALUES
+(1, 1, 'Кружка', 5, 45.90),
+(2, 17, 'Фломастеры', 0, 78.00),
+(3, NULL, 'Сникерс', 12, 50.30);
