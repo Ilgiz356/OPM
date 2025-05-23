@@ -1,17 +1,26 @@
 1) Выберите из таблицы orders 4 самых дорогих заказов за всё время.
-
 Данные нужно отсортировать в порядке убывания цены.
 Отмененные заказы не учитывайте.
 
+select * from orders where status != "cancelled" order by sum desc limit 4
+
+
 
 2) Выберите из таблицы products название и цены четырех самых дешевых товаров, которые есть на складе.
+
+select name, price from products where count != 0 order by price limit 4
+
 
 
 3) Выберите из таблицы orders три последних заказа (по дате date) стоимостью от 3200 рублей и выше.
 Данные отсортируйте по дате в обратном порядке.
 
+select * from orders where sum >= 3200 order by date desc limit 3
+
+
 
 4) Создайте данную таблицу:
+
 DROP TABLE IF EXISTS products;
 CREATE TABLE products (
     id INT UNSIGNED NOT NULL,
@@ -40,4 +49,7 @@ VALUES
     (17, 'Клавиатура', 3, 1800);
 
 
+
 5) Из этой таблицы сделать выборку на основе задания: Сайт выводит товары по 5 штук. Выберите из таблицы products товары, которые пользователи увидят на 3 странице каталога при сортировке в порядке возрастания цены (price).
+
+select * from products order by price limit 10,5
